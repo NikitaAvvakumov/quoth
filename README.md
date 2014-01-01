@@ -1,0 +1,1 @@
+Quoth: a social quote-sharing app built in Ruby on Rails
