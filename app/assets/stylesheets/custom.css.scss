@@ -1,0 +1,61 @@
+@import "bootstrap";
+
+/* general rules */
+body {
+  padding-top: 50px;
+}
+
+html {
+  overflow-y: scroll;
+}
+
+.center h2 {
+  margin-bottom: 20px;
+}
+
+#logo {
+  float: left;
+  margin-right: 10px;
+  color: white;
+  font-weight: bold;
+  font-size: 1.7em;
+  padding-top: 9px;
+  &:hover {
+    color: white;
+    text-decoration: none;
+  }
+}
+
+#logo, .quoth {
+  font-family: 'PT Mono','Consolas', 'Monaco', 'Menlo', monospace;
+  letter-spacing: 1px;
+}
+
+.dot {
+  letter-spacing: -2px;
+}
+
+/* footer */
+footer {
+  margin-top: 45px;
+  clear: both;
+  padding-top: 5px;
+  border-top: 1px solid #eaeaea;
+  color: #999;
+
+  a {
+    color: #555;
+    &:hover{
+      color: #222;
+    }
+  }
+
+  ul {
+    float: right;
+    list-style: none;
+    li {
+      float: left;
+      margin-left: 10px;
+    }
+  }
+}

@@ -2,27 +2,27 @@ require 'spec_helper'
 
 describe "StaticPages" do
 
+  subject { page }
+
   describe 'Home page' do
-    before(:each) { visit '/static_pages/home' }
+    before(:each) { visit root_path }
 
-    it 'it should have the right title' do
-      expect(page).to have_title('Quoth')
-    end
-
-    it 'it should have content "Quoth"' do
-      expect(page).to have_content('Quoth')
-    end
+    it { should have_title(full_title('')) }
+    it { should have_content('Welcome to quoth.') }
+    it { should_not have_title('quoth. | Home') }
   end
 
   describe 'About page' do
-    before(:each) { visit '/static_pages/about' }
+    before(:each) { visit about_path }
 
-    it 'should have the right title' do
-      expect(page).to have_title('Quoth | About')
-    end
+    it { should have_title(full_title('About')) }
+    it { should have_content('About quoth.') }
+  end
 
-    it 'should have content "About Quoth"' do
-      expect(page).to have_content('About Quoth')
-    end
+  describe 'Privacy page' do
+    before(:each) { visit privacy_path }
+
+    it { should have_title(full_title('Privacy')) }
+    it { should have_content('quoth privacy policy') }
   end
 end

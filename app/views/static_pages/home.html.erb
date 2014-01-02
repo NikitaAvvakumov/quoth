@@ -1,3 +1,18 @@
 <% provide(:title, '') %>
 
-<h2>Welcome to Quoth!</h2>
+<div class="center">
+  <h1>Welcome to <span class="quoth">quot<span class="dot">h.</span></span></h1>
+
+  <div class="span6 hero-unit">
+	<p id="sales_pitch">Share you favourite quotes or find new inspiring words. Follow new quote posts from individual
+	  <b><span class="quoth">quoth</span></b> users, get updates when anyone shares a saying from a person you admire, or
+	  subscribe to receive all quotes related to a specific topic.</p>
+  </div>
+
+  <div class="span4" id="sidebar">
+	<p>Here are some examples to get you started: <%= link_to 'Buddha', '#' %>, <%= link_to 'Mark Twain', '#' %>,
+	  <%= link_to 'Politics', '#' %>, <%= link_to 'Art', '#' %>, <%= link_to '@Nik', '#' %>.</p><br />
+
+	<p>If you like what you see, </p><%= link_to 'Sign up', signup_path, class: 'btn btn-large btn-inverse' %>
+  </div>
+</div>
