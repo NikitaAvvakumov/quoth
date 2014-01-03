@@ -46,7 +46,7 @@ describe User do
     end
 
     context 'when email format is invalid' do
-      %w(vetinari@ankh,gov vetinari_ankh.gov vetinari@ankh @ankh.gov vetinari@ankh+morpork.gov).each do |invalid_email|
+      %w(vetinari@ankh,gov vetinari_ankh.gov vetinari@ankh @ankh.gov vetinari@ankh+morpork.gov vet@ankh..gov).each do |invalid_email|
         before { @user.email = invalid_email }
         it { should_not be_valid }
       end
