@@ -1,5 +1,6 @@
 Quoth::Application.routes.draw do
 
+  resources :users
   root 'static_pages#home'
   get '/about', to: 'static_pages#about'
   get '/privacy', to: 'static_pages#privacy'

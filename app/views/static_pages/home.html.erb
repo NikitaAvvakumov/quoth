@@ -1,18 +1,23 @@
 <% provide(:title, '') %>
 
-<div class="center">
-  <h1>Welcome to <span class="quoth">quot<span class="dot">h.</span></span></h1>
+<div class="card">
 
-  <div class="span6 hero-unit">
-	<p id="sales_pitch">Share you favourite quotes or find new inspiring words. Follow new quote posts from individual
+  <div class="sales_pitch"> <!-- class="col-md-6 col-md-offset-1"> -->
+    <h1>Welcome to <span class="quoth">quot<span class="dot">h.</span></span></h1>
+	<p class="lead"> <!--id="sales_pitch"-->Share you favourite quotes or find new inspiring words. Follow new quote posts from individual
 	  <b><span class="quoth">quoth</span></b> users, get updates when anyone shares a saying from a person you admire, or
 	  subscribe to receive all quotes related to a specific topic.</p>
   </div>
 
-  <div class="span4" id="sidebar">
-	<p>Here are some examples to get you started: <%= link_to 'Buddha', '#' %>, <%= link_to 'Mark Twain', '#' %>,
-	  <%= link_to 'Politics', '#' %>, <%= link_to 'Art', '#' %>, <%= link_to '@Nik', '#' %>.</p><br />
+  <div class="side"> <!-- class="col-md-4"> -->
+	<p class="lead">Here are some examples to get you started:
+	  <%= link_to 'Buddha', '#' %>,
+	  <%= link_to 'Mark Twain', '#' %>,
+	  <%= link_to 'Politics', '#' %>,
+	  <%= link_to 'Art', '#' %>,
+	  <%= link_to '@Nik', '#' %>.
+	</p>
 
-	<p>If you like what you see, </p><%= link_to 'Sign up', signup_path, class: 'btn btn-large btn-inverse' %>
+	<p class="lead">If you like what you see, </p><%= link_to 'Sign up', signup_path, class: 'btn btn-large btn-info' %>
   </div>
 </div>
