@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  <title><%= yield(:title) %></title>
+  <style type="text/css">
+	  body { font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif; }
+	  .jumbotron {
+		  padding: 30px 100px;
+		  font-size: 20px;
+		  background-color: #F7F7F7;
+		  border: 1px solid #999999;
+		  position: absolute;
+		  width: 600px;
+		  height: 400px;
+	  }
+	  .jumbotron p {
+		  line-height: 1.4;
+		  font-weight: lighter;
+	  }
+	  .jumbotron h1 {
+		  font-size: 30px;
+	  }
+	  .jumbotron .right {
+		  text-align: right;
+	  }
+	  .jumbotron .container {
+		  width: 500px;
+		  height: 350px;
+		  position: absolute;
+		  left: 50%;
+		  top: 50%;
+		  margin-left: -250px;
+		  margin-top: -175px;
+	  }
+	  .quoth {
+		  font-family: 'PT Mono','Consolas', 'Monaco', 'Menlo', monospace;
+		  letter-spacing: 1px;
+		  font-weight: bold;
+	  }
+  </style>
+</head>
+
+<body>
+<div class="jumbotron">
+  <div class="container">
+	<%= yield %>
+  </div>
+</div>
+</body>
+</html>

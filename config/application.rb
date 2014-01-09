@@ -28,5 +28,8 @@ module Quoth
 
     # Added for compatibility with bootstrap-sass
     config.assets.precompile += %w(*.png *.jpg *.jpeg *.gif)
+
+    # :host parameter for the mailer
+    config.action_mailer.default_url_options = { host: 'pacific-basin-6357-quoth.herokuapp.com' }
   end
 end
