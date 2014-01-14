@@ -14,6 +14,12 @@ describe "UserPages" do
       it 'should not create a new user' do
         expect { click_button 'Sign up for quoth.' }.not_to change(User, :count)
       end
+
+      describe 'after submission' do
+        before { click_button 'Sign up for quoth.' }
+        it { should have_title(full_title('Sign up')) }
+        it { should have_selector('div.alert.alert-danger', 'error') }
+      end
     end
 
     describe 'with valid information' do
@@ -25,8 +31,23 @@ describe "UserPages" do
         fill_in 'Confirm your password', with: 'Sybill'
       end
 
-      it 'should create a new user' do
-        expect { click_button 'Sign up for quoth.' }.to change(User, :count).by(1)
+      describe 'user creation' do
+        it 'should create a new user' do
+          expect { click_button 'Sign up for quoth.' }.to change(User, :count).by(1)
+        end
+
+        it 'should send an email to new user' do
+          expect(ActionMailer::Base.deliveries.last.to).to eq ['vines@nightwatch.am.gov']
+          expect(ActionMailer::Base.deliveries.last.subject).to eq 'Welcome to quoth.'
+        end
+      end
+
+      describe 'after submission' do
+        before { click_button 'Sign up for quoth.' }
+        let(:user) { User.find_by(email:'vines@nightwatch.am.gov') }
+
+        it { should have_title(full_title('Sam Vines')) }
+        it { should have_selector('div.alert.alert-success', 'Welcome to quoth.') }
       end
     end
   end

@@ -1,10 +1,11 @@
-<% provide(:title, 'Welcome to quoth') %>
+<% provide(:title, 'Welcome to quoth.') %>
 
 <h1><%= @user.name %>, welcome to <span class="quoth">quoth.</span></h1>
 <p>You have successfully created a profile with username <%= @user.username %>.</p>
 
 <p>Visit us soon by following this link: <a href="<%= root_url %>"><%= root_url %></a>.</p>
+<%#link to root to be replaced by a confirmation link when implemented %>
 
-<p>Thanks for joining and happy quoting!</p>
+<p>Thanks for joining and happy quot(h)ing!</p>
 
 <p class="right"><i>The <span class="quoth">quoth</span> team</i></p>
