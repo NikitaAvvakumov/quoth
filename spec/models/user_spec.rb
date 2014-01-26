@@ -14,6 +14,7 @@ describe User do
   it { should respond_to(:password) }
   it { should respond_to(:password_confirmation) }
   it { should respond_to(:authenticate) }
+  it { should respond_to(:remember_token) }
   it { should be_valid }
 
   describe 'validations' do
@@ -24,6 +25,11 @@ describe User do
           it { should_not be_valid }
         end
       end
+    end
+
+    describe 'remember_token' do
+      before { @user.save }
+      its(:remember_token) { should_not be_blank }
     end
 
     context 'when username is too long' do

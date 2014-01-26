@@ -6,7 +6,7 @@ describe "StaticPages" do
 
   shared_examples_for 'all static pages' do
     it { should have_title(full_title(page_title)) }
-    it { should have_selector('h1', text: heading) }
+    it { should have_correct_heading(heading) } # custom matcher in spec/support/utilities.rb
   end
 
   describe 'Home page' do
@@ -42,7 +42,8 @@ describe "StaticPages" do
     expect(page).to have_title(full_title('Privacy'))
     click_link 'quoth.'
     expect(page).to have_title(full_title(''))
-    click_link 'Sign up'
+    #click_link 'Sign up'
+    first(:link, 'Sign up').click
     expect(page).to have_title(full_title('Sign up'))
   end
 end
